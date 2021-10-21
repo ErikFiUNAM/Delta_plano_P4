@@ -22,3 +22,36 @@ yp = yc+rcir*sin(thetac);
 
 figure
 plot(xp,yp)
+
+
+%%%%Ubicación del sistema 3_1
+%%Orientación fija
+theta_0P = 0;
+rmovil = 0.044; %m
+
+x3_1 = xp+rmovil*cos(theta_0P-pi/2);
+y3_1 = yp+rmovil*sin(theta_0P-pi/2);
+
+
+%%%%Ubicación del sistema 3_2
+%%Orientación fija
+
+x3_2 = xp+rmovil*cos(theta_0P+pi/6);
+y3_2 = yp+rmovil*sin(theta_0P+pi/6);
+
+%%%%Ubicación del sistema 3_2
+%%Orientación fija
+
+x3_3 = xp+rmovil*cos(theta_0P+5*pi/6);
+y3_3 = yp+rmovil*sin(theta_0P+5*pi/6);
+
+figure
+plot(xp,yp,'-',x3_1,y3_1,'--',x3_2,y3_2,'--',x3_3,y3_3,'--')
+title('Simulación Delta')
+xlabel('x')
+ylabel('y')
+legend('Trayectoria {P}','Trayectoria {3.1}','Trayectoria {3.2}','Trayectoria {3.3}')
+grid on
+
+
+
